@@ -1,0 +1,14 @@
+[
+  { "slug": "teaching", "name": "Teaching and instruction", "blurb": "Explicit instruction, cognitive science, questioning, modelling, practice and adaptive teaching." },
+  { "slug": "assessment", "name": "Assessment, marking and feedback", "blurb": "Feedback that moves learning on, marking and workload, formative and summative assessment, exams." },
+  { "slug": "behaviour", "name": "Behaviour and culture", "blurb": "DfE behaviour guidance, exclusions, routines, scripts, sanctions, restorative practice and school culture." },
+  { "slug": "attendance", "name": "Attendance and wellbeing", "blurb": "Statutory attendance duties, persistent absence, EBSA, working with families and pupil mental health." },
+  { "slug": "safeguarding", "name": "Safeguarding", "blurb": "KCSIE, the DSL role, safer recruitment, online safety, Prevent, child-on-child abuse and record keeping." },
+  { "slug": "curriculum", "name": "Curriculum", "blurb": "National curriculum and its review, knowledge and sequencing, Key Stages 3 to 5, RSHE, careers and personal development." },
+  { "slug": "literacy", "name": "Literacy, oracy and numeracy", "blurb": "Disciplinary literacy, struggling readers, vocabulary, writing, oracy and maths and science guidance." },
+  { "slug": "send-inclusion", "name": "SEND, inclusion and disadvantage", "blurb": "The SEND code, EHCPs, teaching assistants, specific needs, the Equality Act and pupil premium." },
+  { "slug": "ofsted-accountability", "name": "Ofsted, accountability and compliance", "blurb": "The inspection framework and report cards, performance measures, statutory policies and website requirements." },
+  { "slug": "leadership", "name": "Leadership and professional development", "blurb": "Implementation, professional development, coaching, governance, workload, pay and conditions." },
+  { "slug": "thinkers", "name": "Key thinkers", "blurb": "Profiles of the people whose ideas shape practice: what they argue, how to use it, and the critiques." },
+  { "slug": "sources", "name": "Sources and organisations", "blurb": "Where the evidence and news come from, what each source is good for, and how to read it critically." }
+]

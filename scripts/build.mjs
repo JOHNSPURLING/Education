@@ -126,7 +126,7 @@ const data = {
   categories,
   entries: entries.map(({ words: _w, ...e }) => e),
 };
-const json = JSON.stringify(data).replace(/</g, '\\u003c').replace(/ /g, '\\u2028').replace(/ /g, '\\u2029');
+const json = JSON.stringify(data).replace(/</g, '\\u003c').replace(/[\u2028\u2029]/g, (c) => '\\u' + c.charCodeAt(0).toString(16));
 
 const read = (f) => fs.readFileSync(path.join(root, 'site', f), 'utf8');
 const head = read('head.html').replace('/*{{CSS}}*/', () => read('styles.css'));

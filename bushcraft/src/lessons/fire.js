@@ -3,6 +3,7 @@ import { ease } from '../engine/timeline.js';
 import { Fire } from '../fx/fire.js';
 import * as kit from '../models/kit.js';
 import { rng, range, mat, shadowed } from '../models/util.js';
+import { point, callout } from './helpers.js';
 
 // Lesson: lighting, keeping and putting out a fire in a raised fire bowl.
 // Wind blows towards +x, so the upwind (safe) side is -x.
@@ -202,13 +203,6 @@ function pour(d, k, t) {
   return d.move(k.bucket, { pos: [-0.75, 0, 0.95], rot: [0, 0, 0] }, t + 3.0, 0.7);
 }
 
-function point(x, y, z) {
-  const o = new THREE.Object3D();
-  o.position.set(x, y, z);
-  return o;
-}
-
-const callout = (anchor, text, opts = {}) => ({ anchor, text, ...opts });
 
 // The lesson --------------------------------------------------------------
 

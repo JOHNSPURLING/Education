@@ -31,6 +31,11 @@ Read this before adding a lesson, a model or an effect, so everything stays cons
 - A step must work from a fresh build plus fast-forwarding all earlier steps, because
   that's how jumping around works. Never rely on state left by a later step.
 - Each lesson has a grid reference on the practice map (`ref`) and a fictional place name.
+- Shared helpers (`point`, `callout`, `between`) live in `src/lessons/helpers.js`.
+- If kit hides what a step teaches (the tarp over the leaf bed), fade it to a see-through
+  "cutaway" for that step rather than moving the camera somewhere unnatural.
+- Plan camera views around trees and tall kit: nothing may stand between the camera and
+  what the step is about.
 
 ## Art style
 

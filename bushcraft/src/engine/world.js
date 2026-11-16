@@ -29,7 +29,7 @@ export class World {
       enableDamping: true,
       dampingFactor: 0.08,
       enablePan: false,
-      minDistance: 3,
+      minDistance: 1.6,
       maxDistance: 16,
       minPolarAngle: 0.2,
       maxPolarAngle: 1.38,
@@ -155,7 +155,8 @@ export class World {
       // Flip a label to the other side rather than let it run off the screen.
       if (side > 0 && x + reach + wid > w - 8) side = -1;
       else if (side < 0 && x - reach - wid < 8) side = 1;
-      const lx = x + side * reach;
+      // Keep the whole label on screen, even on a narrow phone.
+      const lx = side > 0 ? Math.min(x + reach, w - 8 - wid) : Math.max(x - reach, 8 + wid);
       const ly = y - (c.lift ?? 64);
       c.el.style.transform = `translate(${lx}px, ${ly}px) translate(${side > 0 ? '0' : '-100%'}, -50%)`;
       c.line.setAttribute('x1', x);

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Field Kit · Bushcraft lessons</title>
+    <meta name="description" content="Interactive 3D bushcraft lessons for UK secondary schools: fire lighting, shelter building and navigation, step by step." />
+    <meta name="theme-color" content="#f6f3ea" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3540'/%3E%3Cpath d='M16 6l9 18H7z' fill='%23f4c430'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <canvas class="map" id="map" aria-hidden="true"></canvas>
+
+    <div class="app" data-mode="student">
+      <header class="topbar">
+        <a class="brand" href="./">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#1d3540"/><path d="M20 7 33 31H7z" fill="#f4c430"/><path d="M20 7 13.5 19 20 17.5l6.5 1.5z" fill="#1d3540" opacity=".35"/><path d="M11 31h18" stroke="#1d3540" stroke-width="2.4"/></svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__title">Field Kit</span>
+            <span class="brand__sub">Bushcraft lessons</span>
+          </span>
+        </a>
+
+        <button class="lesson-pick" id="lesson-pick" aria-haspopup="dialog">
+          <span class="lesson-pick__label">Lesson</span>
+          <span class="lesson-pick__name" id="lesson-name"></span>
+          <span class="lesson-pick__ref" id="lesson-ref"></span>
+        </button>
+
+        <div class="mode" role="radiogroup" aria-label="Who is using this">
+          <button class="mode__btn" role="radio" data-mode="student" aria-checked="true">Student</button>
+          <button class="mode__btn" role="radio" data-mode="teacher" aria-checked="false">Teacher</button>
+        </div>
+      </header>
+
+      <main class="stage">
+        <div class="scene" id="scene" aria-label="3D scene. Drag to look around."></div>
+        <div class="callouts" id="callouts" aria-hidden="true"></div>
+
+        <div class="player" role="toolbar" aria-label="Playback">
+          <button class="pbtn" id="view-reset" title="Reset view (R)" aria-label="Reset view">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 5.5l2.4 6.5h-4.8z" class="fill"/><path d="M12 18.5 9.6 12h4.8z"/></svg>
+          </button>
+          <span class="player__sep"></span>
+          <button class="pbtn" id="prev" title="Previous step (←)" aria-label="Previous step"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="pbtn pbtn--main" id="play" title="Play / pause (space)" aria-label="Pause">
+            <svg class="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" class="fill"/></svg>
+          </button>
+          <button class="pbtn" id="next" title="Next step (→)" aria-label="Next step"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+          <span class="player__sep"></span>
+          <button class="pbtn pbtn--text" id="speed" title="Playback speed" aria-label="Playback speed">1×</button>
+        </div>
+
+        <aside class="notes" id="notes" aria-label="Field notes">
+          <div class="notes__head">
+            <span class="notes__kicker" id="stage-kicker"></span>
+            <h2 class="notes__title" id="stage-title"></h2>
+            <p class="notes__lede" id="stage-lede"></p>
+          </div>
+          <div class="tabs" role="tablist" id="tabs"></div>
+          <div class="notes__body" id="notes-body"></div>
+        </aside>
+
+        <nav class="route" aria-label="Lesson stages">
+          <ol class="route__stops" id="route-stops"></ol>
+          <div class="route__meta">
+            <span id="progress-text"></span>
+            <button class="link-btn" id="print-btn">Print lesson card</button>
+          </div>
+        </nav>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <dialog class="picker" id="picker" aria-labelledby="picker-title">
+      <div class="picker__head">
+        <h2 id="picker-title">Lessons</h2>
+        <button class="picker__close" id="picker-close" aria-label="Close">×</button>
+      </div>
+      <p class="picker__intro">Every lesson sits somewhere on the practice map. The grid reference tells you where.</p>
+      <ul class="picker__list" id="picker-list"></ul>
+    </dialog>
+
+    <section class="printcard" id="printcard" aria-hidden="true"></section>
+
+    <noscript><p class="noscript">Field Kit needs JavaScript and WebGL to show its 3D lessons.</p></noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

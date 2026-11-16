@@ -37,7 +37,8 @@ export class World {
     this.setView(DEFAULT_VIEW);
 
     // Light: soft daylight from above plus a low sun for readable shadows.
-    this.scene.add(new THREE.HemisphereLight('#fff7e6', '#7d6d52', 1.6));
+    this.hemi = new THREE.HemisphereLight('#fff7e6', '#7d6d52', 1.6);
+    this.scene.add(this.hemi);
     const sun = (this.sun = new THREE.DirectionalLight('#fff1d6', 2.4));
     sun.position.set(4, 8, 3);
     sun.castShadow = true;
@@ -85,6 +86,9 @@ export class World {
 
   // Remove the lesson's props and effects so the lesson can rebuild from scratch.
   clear() {
+    // Lessons may dim the daylight (for a night scene); every rebuild starts at midday.
+    this.hemi.intensity = 1.6;
+    this.sun.intensity = 2.4;
     for (const f of this.fx) f.dispose?.();
     this.props.traverse((o) => {
       o.geometry?.dispose();

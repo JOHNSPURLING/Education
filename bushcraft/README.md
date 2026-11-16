@@ -4,7 +4,7 @@ Interactive 3D bushcraft lessons for UK secondary schools (KS3 to sixth form). E
 lesson plays as a short 3D demonstration on a practice map, broken into stages and
 steps, with the reasons, the safety points and a quick check for each stage.
 
-**Lessons:** Lighting a fire and Building a shelter (built). Navigation & finding help (planned).
+**Lessons:** Lighting a fire, Building a shelter, and Navigation & finding help.
 
 ## Two modes
 
@@ -24,7 +24,8 @@ Links can point straight at a step, e.g. `?lesson=fire&stage=4&step=2&mode=teach
 
 The background is a made-up stretch of countryside drawn like a walker's map: a
 numbered grid, contours, woodland, a stream and footpaths. Every lesson has a grid
-reference on it (fire is at 482 317, shelter at 475 322), so moving between lessons is grid-reference practice.
+reference on it (fire is at 482 317, shelter at 475 322, navigation at 491 309), so moving between
+lessons is grid-reference practice. The navigation lesson uses a paper copy of the same map.
 
 ## Running it
 

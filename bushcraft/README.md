@@ -4,7 +4,7 @@ Interactive 3D bushcraft lessons for UK secondary schools (KS3 to sixth form). E
 lesson plays as a short 3D demonstration on a practice map, broken into stages and
 steps, with the reasons, the safety points and a quick check for each stage.
 
-**Lessons:** Lighting a fire, Building a shelter, and Navigation & finding help.
+**Lessons:** Lighting a fire, Building a shelter, Navigation & finding help, and Using a knife safely.
 
 ## Two modes
 
